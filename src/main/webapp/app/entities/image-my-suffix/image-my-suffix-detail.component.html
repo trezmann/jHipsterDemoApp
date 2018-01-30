@@ -1,0 +1,42 @@
+
+<div *ngIf="image">
+    <h2><span>Image</span> {{image.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>File Path</span></dt>
+        <dd>
+            <span>{{image.filePath}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{image.type}}</span>
+        </dd>
+        <dt><span>Mandant Id</span></dt>
+        <dd>
+            <span>{{image.mandantId}}</span>
+        </dd>
+        <dt><span>Kunden Id</span></dt>
+        <dd>
+            <span>{{image.kundenId}}</span>
+        </dd>
+        <dt><span>Image Name</span></dt>
+        <dd>
+            <span>{{image.imageName}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'image-my-suffix/'+ image.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
