@@ -1,0 +1,20 @@
+entity Image {
+	filePath String,
+	type SctType,
+	MandantId String,
+	KundenId String,
+    ImageName String
+}
+
+enum SctType {
+    EPSFEIN, EPSGROB, PDFFEIN, PDFGROB, PREVIEWGROB
+}
+// Set pagination options
+paginate Image with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mySuffix
